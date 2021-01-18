@@ -1,0 +1,8 @@
+prefix=/home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/install
+
+Name: test_gazebo
+Description: Description of test_gazebo
+Version: 1.3.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ltest_gazebo
+Requires: roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros

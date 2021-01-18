@@ -1,0 +1,2 @@
+test_description_OLD:test_gazebo:turtlebot3_description
+-DCATKIN_DEVEL_PREFIX=/home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/devel -DCMAKE_INSTALL_PREFIX=/home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/install -G Unix Makefiles

@@ -1,0 +1,58 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_601f0/fast && /usr/bin/make -f CMakeFiles/cmTC_601f0.dir/build.make CMakeFiles/cmTC_601f0.dir/build
+make[1] : on entre dans le répertoire « /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_601f0.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_601f0.dir/src.c.o   -c /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_601f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_601f0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_601f0.dir/src.c.o  -o cmTC_601f0 
+/usr/bin/ld : CMakeFiles/cmTC_601f0.dir/src.c.o : dans la fonction « main » :
+src.c:(.text+0x46) : référence indéfinie vers « pthread_create »
+/usr/bin/ld : src.c:(.text+0x52) : référence indéfinie vers « pthread_detach »
+/usr/bin/ld : src.c:(.text+0x63) : référence indéfinie vers « pthread_join »
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_601f0.dir/build.make:87 : cmTC_601f0] Erreur 1
+make[1] : on quitte le répertoire « /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_601f0/fast] Erreur 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7ab4b/fast && /usr/bin/make -f CMakeFiles/cmTC_7ab4b.dir/build.make CMakeFiles/cmTC_7ab4b.dir/build
+make[1] : on entre dans le répertoire « /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_7ab4b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7ab4b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ab4b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ab4b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_7ab4b.dir/CheckFunctionExists.c.o  -o cmTC_7ab4b  -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_7ab4b.dir/build.make:87 : cmTC_7ab4b] Erreur 1
+make[1] : on quitte le répertoire « /home/yboudjemai/M2IIA/DiagnosticEtPronostic/AnimatedBall_Test/TEST2/src/test_gazebo/src/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_7ab4b/fast] Erreur 2
+
+
+
