@@ -1,8 +1,0 @@
-prefix=/home/yboudjemai/M2IIA/DiagnosticEtPronostic/ROS/TurtleBot3/catkin_ws/install
-
-Name: turtlebot3_navigation
-Description: Description of turtlebot3_navigation
-Version: 1.2.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
